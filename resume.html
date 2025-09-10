@@ -224,5 +224,38 @@
         This r&eacute;sum&eacute; was wholly typeset with HTML/CSS &mdash; see <code>git.io/vVSYL</code>
       </div>
     </aside>
+    <script>
+  window.addEventListener('message', function (event) {
+    const data = event.data;
+
+    if (typeof data !== 'object' || !data.source || data.source !== 'wix-form') return;
+
+    if (data.fullName) {
+      const nameElem = document.querySelector('#title h1');
+      if (nameElem) nameElem.innerText = data.fullName;
+    }
+
+    if (data.jobTitle) {
+      const titleElem = document.querySelector('#title .subtitle');
+      if (titleElem) titleElem.innerText = data.jobTitle;
+    }
+
+    if (data.experience) {
+      const expElem = document.querySelector('.main-block:nth-of-type(1) .blocks:nth-of-type(1) ul li:nth-of-type(2)');
+      if (expElem) expElem.innerText = data.experience;
+    }
+
+    if (data.contact) {
+      const contactElems = document.querySelectorAll('#contact ul li');
+      if (contactElems.length > 0) contactElems[0].innerText = data.contact;
+    }
+
+    if (data.skills) {
+      const skillElems = document.querySelectorAll('#skills ul li');
+      if (skillElems.length > 0) skillElems[0].innerText = data.skills;
+    }
+  });
+</script>
+
   </body>
 </html>
