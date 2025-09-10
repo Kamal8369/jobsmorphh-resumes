@@ -256,17 +256,7 @@
     }
   });
 </script>
-<script>
-  window.addEventListener('message', function(event) {
-    if (event.data.source === 'wix-form') {
-      document.getElementById('name').innerText = event.data.fullName;
-      document.getElementById('title').innerText = event.data.jobTitle;
-      document.getElementById('experience').innerText = event.data.experience;
-      document.getElementById('contact').innerText = event.data.contact;
-      document.getElementById('skills').innerText = event.data.skills;
-    }
-  });
-</script>
+
 
   </body>
 </html>
